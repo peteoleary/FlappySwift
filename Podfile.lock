@@ -1,0 +1,26 @@
+PODS:
+  - Keys (1.0.0)
+  - KISSmetrics-iOS-SDK (2.3.0)
+
+DEPENDENCIES:
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - KISSmetrics-iOS-SDK (from `https://github.com/peteoleary/KISSmetrics-iOS-SDK.git`)
+
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+  KISSmetrics-iOS-SDK:
+    :git: https://github.com/peteoleary/KISSmetrics-iOS-SDK.git
+
+CHECKOUT OPTIONS:
+  KISSmetrics-iOS-SDK:
+    :commit: d8f7315121574f325015e7df0dd8016ab2d27b13
+    :git: https://github.com/peteoleary/KISSmetrics-iOS-SDK.git
+
+SPEC CHECKSUMS:
+  Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
+  KISSmetrics-iOS-SDK: 8217d5fe1c3863816fc8c538bca0da1973f21f3c
+
+PODFILE CHECKSUM: 60154fe1704a0db483b5352788532611518139d2
+
+COCOAPODS: 1.1.1
