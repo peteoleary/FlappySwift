@@ -31,8 +31,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         canRestart = false
         
-        // setup physics
-        self.physicsWorld.gravity = CGVector( dx: 0.0, dy: -5.0 )
+        // setup physics, adjust this value to make FlappyBird fall slower
+        self.physicsWorld.gravity = CGVector( dx: 0.0, dy: -3.0 )
         self.physicsWorld.contactDelegate = self
         
         // setup background color
@@ -91,7 +91,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         // spawn the pipes
         let spawn = SKAction.run({() in self.spawnPipes()})
-        let delay = SKAction.wait(forDuration: TimeInterval(2.0))
+        
+        // adjust this value to make pipes come faster or slower
+        let delay = SKAction.wait(forDuration: TimeInterval(4.0))
         let spawnThenDelay = SKAction.sequence([spawn, delay])
         let spawnThenDelayForever = SKAction.repeatForever(spawnThenDelay)
         self.run(spawnThenDelayForever)
@@ -209,7 +211,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
                 let location = touch.location(in: self)
                 
                 bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 30))
+                
+                // adjust this value to make FlappyBird climb a bit slower
+                bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
                 
             }
         } else if canRestart {
